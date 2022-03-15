@@ -1,0 +1,27 @@
+{
+    "options": {
+        "cwd": "${workspaceFolder}/build/"
+    },
+    "tasks": [
+        {
+            "label": "cmake",
+            "command":"cmake",
+            "args": [
+                ".."
+            ],
+            "type": "shell"
+        },
+        {
+            "label": "mingwmake",
+            "command":"mingw32-make.exe"
+        },
+        {
+            "label": "make",
+            "dependsOn":[
+                "cmake",
+                "mingwmake"
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}
